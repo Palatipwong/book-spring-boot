@@ -31,6 +31,13 @@ public class BookService {
         repository.deleteById(id);
         return book;
     }
+    @PutMapping("/{id}")
+    public Book update(@PathVariable int id, @RequestBody Book book) {
+        repository.update(id, book);
+        return repository.findById(id);
+
+    }
+
 
 
 
